@@ -29,6 +29,4 @@ app.get("/api/healthz", async (req, res) => {
 /* -------------------- Routes -------------------- */
 app.use(pasteRoutes);
 /* -------------------- Start Server -------------------- */
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+module.exports = app;

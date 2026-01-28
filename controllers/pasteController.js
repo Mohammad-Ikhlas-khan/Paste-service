@@ -1,5 +1,5 @@
 const Redis = require("ioredis");
-const { nanoid } = require("nanoid");
+const nanoid = require("nanoid");
 const dotenv = require('dotenv');
 
 dotenv.config();

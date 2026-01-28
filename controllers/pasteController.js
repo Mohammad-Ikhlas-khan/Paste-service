@@ -1,5 +1,6 @@
 const Redis = require("ioredis");
-const nanoid = require("nanoid");
+const crypto = require("crypto");
+
 const dotenv = require('dotenv');
 
 dotenv.config();
@@ -49,7 +50,7 @@ exports.createPaste =  async (req, res) => {
     return res.status(400).json({ error: "Invalid max_views" });
   }
 
-  const id = nanoid();
+  const id = crypto.randomUUID();
   const key = pasteKey(id);
 
   const expiresAt = ttl_seconds
